@@ -4,10 +4,6 @@ from hackathon.utils.control import Control
 from hackathon.utils.utils import ResultsMessage, DataMessage, PVMode, \
     TYPHOON_DIR, config_outs
 from hackathon.framework.http_server import prepare_dot_dir
-from scipy.optimize import minimize
-import numpy
-
-open('output.txt', 'w').close()
 
 cheapPrice = 0
 BATTERY_MAX_POWER = 5.0
@@ -20,8 +16,6 @@ def worker(msg: DataMessage) -> ResultsMessage:
 
     if not previous_grid_status and msg.grid_status:
         blackout_counter += 1
-        with open('output.txt', 'a') as f:
-            f.write(str(blackout_counter) + '\n')
 
     previous_grid_status = msg.grid_status
     if msg.grid_status:
@@ -104,40 +98,6 @@ def gridOff(msg: DataMessage) -> ResultsMessage:
                             load_three=load_three,
                             power_reference=power_reference,
                             pv_mode=pv_mode)
-
-
-
-    # if msg.current_load <= msg.solar_production:
-    #     if msg.bessSOC > 0.8 :
-    #         return ResultsMessage(data_msg=msg,
-    #                           load_one=True,
-    #                           load_two=True,
-    #                           load_three=False,
-    #                           power_reference=msg.current_load,
-    #                           pv_mode=PVMode.OFF)
-
-    #     return ResultsMessage(data_msg=msg,
-    #                           load_one=True,
-    #                           load_two=True,
-    #                           load_three=False,
-    #                           power_reference=0.0,
-    #                           pv_mode=PVMode.ON)
-    # elif msg.current_load <= msg.solar_production + 5.0:
-
-    #     return ResultsMessage(data_msg=msg,
-    #                           load_one=True,
-    #                           load_two=True,
-    #                           load_three=False,
-    #                           power_reference=msg.current_load - msg.solar_production,
-    #                           pv_mode=PVMode.ON)
-    # else:
-    #     return ResultsMessage(data_msg=msg,
-    #                           load_one=True,
-    #                           load_two=True,
-    #                           load_three=False,
-    #                           power_reference=5.0,
-    #                           pv_mode=PVMode.ON)
-
 
 def run(args) -> None:
     prepare_dot_dir()
