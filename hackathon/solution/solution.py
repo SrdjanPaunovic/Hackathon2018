@@ -26,11 +26,11 @@ def grid_on(msg: DataMessage) -> ResultsMessage:
 
     can_charge = msg.buying_price == 3 or (msg.selling_price == 0 and msg.current_load < msg.solar_production)
     if can_charge and msg.bessSOC < 1:
-        pwr_reference = -1 * BATTERY_MAX_POWER  # punjenje
+        pwr_reference = -2 * BATTERY_MAX_POWER / 3 # punjenje
     elif msg.bessSOC < 0.25:
         pwr_reference = -0.5  # puni svakako ako je ispod 0.25
     elif msg.bessSOC > 0.27 and msg.selling_price == 3 and msg.buying_price == 8:
-        pwr_reference = BATTERY_MAX_POWER  # praznjenje
+        pwr_reference = 2 * BATTERY_MAX_POWER/3  # praznjenje
 
     return ResultsMessage(data_msg=msg,
                             load_one= True,
