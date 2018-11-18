@@ -1,0 +1,161 @@
+body,svg,text,input,div,a, button,table, td {
+	font-family:Helvetica,Arial,Verdana,sans-serif;
+	
+}
+body {
+  margin: 0;
+}
+form.inline {
+  display: inline-block;
+}
+
+.wrapper {
+	margin-top:70px;
+}
+.wrapper.left{
+	width:74%;
+	background-color:#f8f8f8;
+	height:100%;
+}
+.wrapper.right {
+	width: 24%;
+	padding-left:15px;
+	min-height:1000px;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+.box {
+  border-radius: 5px;
+  padding: 0px;
+}
+.box.b {
+	padding-top:35px;
+}
+.header {
+  font-size:30px;
+  text-align:center;
+  margin-bottom:45px;
+  padding-top:20px;
+}
+#header {
+	position:fixed;
+	top:0;
+	width:100%;
+	padding:10px;
+	background-color:#fff;
+	z-index: 1000000000;
+	border-bottom:1px solid #e8e8e8;
+	height:55px;
+}
+.one-third.column {
+	width:24%;
+	float:left;	
+}
+.one-third.column table {
+	width:60%;
+}
+.two-thirds.column {
+	width:76%;
+	float:left;
+	margin-top:5px;
+}
+.counters {
+    width:100%;
+}
+.counter,.result {
+    font-size:16px;
+    font-family:sans-serif;
+}
+.refresh {
+    float: right;
+    padding-top: 10px;
+    position: fixed;
+    z-index: 100000000;
+	bottom:15px;
+	background-color:#fff;
+}
+.loader {
+    border: 2px solid #999; /* Light grey */
+    border-top: 2px solid #000; /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+span.logo {
+	position: relative;
+    top: -28px;
+    font-size: 30px;
+}
+#header table.counters td {
+	font-size:26px;
+}
+#header table.counters {
+	position: relative;
+    top: 10px;
+}
+form#refreshRateForm input[type=submit], #refreshRateForm button {
+    background: transparent;
+    border-color: #5e91cc;
+    border-style: solid;
+    cursor: pointer;
+    padding: 5px;
+	color: #5e91cc;
+	border-width:1px;
+}
+form#refreshRateForm input[type=submit]:hover, #refreshRateForm button:hover {
+    background: #5e91cc;
+    border-color: #5e91cc;
+    border-style: solid;
+    cursor: pointer;
+    padding: 5px;
+	color:#fff;
+}
+input#refreshRate {
+    margin-bottom: 10px;
+	width:40px;
+	padding:4px 0;
+}
+#refreshRateForm {
+	margin-bottom:10px;
+}
+#refreshIndicator {
+    float: right;
+    position: absolute;
+    top: 12px;
+    right: -35px;
+}
+#teamname {
+	position: relative;
+	top:50px;
+	text-align:center;
+	font-size:30px;
+}
+table.counters.electricity {
+    margin-bottom: 35px;
+}
+table.counters.electricity td {
+    font-size: 18px;
+}
+.hackathon_logo {
+	margin-top:15px;
+	max-height:180px;
+	text-align:center;
+}
+.hackathon_logo svg {
+	/*transform: scale(0.8);*/
+}
+.hackathon_logo img {
+	margin-left: -10%;
+	width: 75%;
+}
+div.counters {
+	font-size:26px;
+	margin-top:12px;
+}
